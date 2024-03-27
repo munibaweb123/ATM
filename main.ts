@@ -25,39 +25,38 @@ if(pinAnswer.pin===myPin){
     }]);
     if(passBal.passAmount===1000){
         myBalance-=passBal.passAmount;
-                console.log("Your remaining balance is: "+myBalance);
+                console.log(`Your remaining balance is: ${myBalance}`);
             }
             else if(passBal.passAmount===2000){
                 myBalance-=passBal.passAmount;
-                console.log("Your remaining balance is: "+myBalance);
+                console.log(`Your remaining balance is: ${myBalance}`);
             }else if(passBal.passAmount===5000){
                 myBalance-=passBal.passAmount;
-                console.log("Your remaining balance is: "+myBalance);
+                console.log(`Your remaining balance is: ${myBalance}`);
             }else if(passBal.passAmount===10000){
                 myBalance-=passBal.passAmount;
-                console.log("Your remaining balance is: "+myBalance);
+                console.log(`Your remaining balance is: ${myBalance}`);
             }else if(passBal.passAmount==="other"){
                 let amountAns=await inquirer.prompt([{
                     name:"amount",
                     message:"please enter amount",
                     type:"number"
-                    
-        
                 }]);
                 if(amountAns.amount>=myBalance){
                     console.log("your balance is insuffitiant for withdrawl")
+                    console.log(`\n please select between 1 to ${myBalance}`)
                 }else{
                 myBalance-=amountAns.amount;
                 console.log("withdraw: "+amountAns.amount);
                 
-                console.log("Your remaining balance is: "+myBalance);
+                console.log(`Your remaining balance is: ${myBalance}`);
     
             }}
         
        }
                
     else if(operationAnswer.operation==="check-balance"){
-        console.log("your balance is: "+myBalance)
+        console.log(`your balance is: ${myBalance}`)
     }
 
 }else {
